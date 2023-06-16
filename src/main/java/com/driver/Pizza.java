@@ -38,23 +38,29 @@ public class Pizza {
     }
 
     public void addExtraToppings(){
-        // your code goes here
-        if(this.isVeg){
-            this.price+=70;
-            this.bill+="Extra Toppings Added: 70\n";
-            this.isExtraToppings=true;
-        }else{
-            this.bill+="Extra Toppings Added: 120\n";
-            this.isExtraToppings=true;
-            this.price+=120;
+        if(!isExtraToppings){
+            if(this.isVeg){
+                this.price+=70;
+                this.bill+="Extra Toppings Added: 70\n";
+                this.isExtraToppings=true;
+            }else{
+                this.bill+="Extra Toppings Added: 120\n";
+                this.isExtraToppings=true;
+                this.price+=120;
+            }
         }
+        // your code goes here
+
     }
 
     public void addTakeaway(){
-        this.bill+="Paperbag Added: 20\n";
-        this.isTakeAway=true;
-        // your code goes here
-        this.price+=20;
+        if(!isTakeAway){
+            this.bill+="Paperbag Added: 20\n";
+            this.isTakeAway=true;
+            // your code goes here
+            this.price+=20;
+        }
+
     }
 
     public String getBill(){
